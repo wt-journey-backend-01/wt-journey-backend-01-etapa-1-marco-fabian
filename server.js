@@ -13,7 +13,44 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-// API de lanches - retornar JSON
+app.get('/sugestao', (req, res) => {
+    const { nome, ingredientes } = req.query;
+    
+    if (!nome || !ingredientes) {
+        return res.status(400).send(`
+            <html>
+                <head>
+                    <title>DevBurger - Erro</title>
+                </head>
+                <body>
+                    <h1>Erro na Sugestão</h1>
+                    <p>Por favor, preencha todos os campos necessários.</p>
+                    <a href="/">Voltar ao início</a>
+                </body>
+            </html>
+        `);
+    }
+
+    res.send(`
+        <html>
+            <head>
+                <title>DevBurger - Sugestão Recebida</title>
+            </head>
+            <body>
+                <h1>🍔 Obrigado pela sua sugestão!</h1>
+                <h2>Detalhes da Sugestão:</h2>
+                <p><strong>Nome do Lanche:</strong> ${nome}</p>
+                <p><strong>Ingredientes:</strong> ${ingredientes}</p>
+                <p>Sua sugestão foi recebida e será analisada pela nossa equipe!</p>
+                <p>
+                    <a href="/">Voltar ao início</a> |
+                    <a href="/contato">Enviar mensagem</a>
+                </p>
+            </body>
+        </html>
+    `);
+});
+
 app.get('/api/lanches', (req, res) => {
     try {
         const lanchesData = fs.readFileSync(path.join(__dirname, 'public', 'data', 'lanches.json'), 'utf8');
