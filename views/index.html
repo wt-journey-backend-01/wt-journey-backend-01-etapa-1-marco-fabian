@@ -8,6 +8,29 @@
 <body>
     <h1>🍔 DevBurger</h1>
     <p>Hamburgueria Gourmet para Desenvolvedores</p>
-    <p>Em breve nosso cardápio completo!</p>
+    
+    <h2>Nosso Cardápio</h2>
+    <ul>
+        <li><strong>DevBurger Clássico</strong> - Pão brioche, Carne 150g, Queijo cheddar, Alface americana, Tomate fresco, Molho especial</li>
+        <li><strong>Burger de Bacon</strong> - Pão australiano, Carne 180g, Queijo prato, Bacon crocante, Cebola caramelizada, Molho barbecue</li>
+        <li><strong>Commit Veggie</strong> - Pão integral, Burger de grão de bico, Queijo vegano, Rúcula, Tomate seco, Maionese de ervas</li>
+        <li><strong>404 NotFound Burger</strong> - Pão de carvão ativado, Carne 200g, Queijo gorgonzola, Geleia de pimenta, Agrião</li>
+    </ul>
+
+    <h2>Sugira um Novo Lanche</h2>
+    <form action="/sugestao" method="GET">
+        <label for="nome">Nome do Lanche:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="ingredientes">Ingredientes:</label>
+        <textarea id="ingredientes" name="ingredientes" required></textarea>
+        
+        <button type="submit">Enviar Sugestão</button>
+    </form>
+
+    <p>
+        <a href="/contato">Entre em Contato</a> |
+        <a href="/api/lanches" target="_blank">API de Lanches</a>
+    </p>
 </body>
 </html>
