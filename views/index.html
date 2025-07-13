@@ -4,33 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevBurger - Cardápio Digital</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>🍔 DevBurger</h1>
-    <p>Hamburgueria Gourmet para Desenvolvedores</p>
-    
-    <h2>Nosso Cardápio</h2>
-    <ul>
-        <li><strong>DevBurger Clássico</strong> - Pão brioche, Carne 150g, Queijo cheddar, Alface americana, Tomate fresco, Molho especial</li>
-        <li><strong>Burger de Bacon</strong> - Pão australiano, Carne 180g, Queijo prato, Bacon crocante, Cebola caramelizada, Molho barbecue</li>
-        <li><strong>Commit Veggie</strong> - Pão integral, Burger de grão de bico, Queijo vegano, Rúcula, Tomate seco, Maionese de ervas</li>
-        <li><strong>404 NotFound Burger</strong> - Pão de carvão ativado, Carne 200g, Queijo gorgonzola, Geleia de pimenta, Agrião</li>
-    </ul>
+    <header>
+        <h1>🍔 DevBurger</h1>
+        <p>Hamburgueria Gourmet para Desenvolvedores</p>
+        <nav>
+            <a href="/">Início</a>
+            <a href="/contato">Contato</a>
+            <a href="/api/lanches">API Lanches</a>
+        </nav>
+    </header>
 
-    <h2>Sugira um Novo Lanche</h2>
-    <form action="/sugestao" method="GET">
-        <label for="nome">Nome do Lanche:</label>
-        <input type="text" id="nome" name="nome" required>
-        
-        <label for="ingredientes">Ingredientes:</label>
-        <textarea id="ingredientes" name="ingredientes" required></textarea>
-        
-        <button type="submit">Enviar Sugestão</button>
-    </form>
+    <main>
+        <section>
+            <h2>Nosso Cardápio</h2>
+            <div class="menu-item">
+                <h3>DevBurger Clássico</h3>
+                <p class="description">Pão brioche, Carne 150g, Queijo cheddar, Alface americana, Tomate fresco, Molho especial</p>
+                <p class="price">R$ 24,90</p>
+            </div>
+            <div class="menu-item">
+                <h3>Burger de Bacon</h3>
+                <p class="description">Pão australiano, Carne 180g, Queijo prato, Bacon crocante, Cebola caramelizada, Molho barbecue</p>
+                <p class="price">R$ 28,90</p>
+            </div>
+            <div class="menu-item">
+                <h3>Commit Veggie</h3>
+                <p class="description">Pão integral, Burger de grão de bico, Queijo vegano, Rúcula, Tomate seco, Maionese de ervas</p>
+                <p class="price">R$ 22,90</p>
+            </div>
+            <div class="menu-item">
+                <h3>404 NotFound Burger</h3>
+                <p class="description">Pão de carvão ativado, Carne 200g, Queijo gorgonzola, Geleia de pimenta, Agrião</p>
+                <p class="price">R$ 32,90</p>
+            </div>
+        </section>
 
-    <p>
-        <a href="/contato">Entre em Contato</a> |
-        <a href="/api/lanches" target="_blank">API de Lanches</a>
-    </p>
+        <section class="suggestion-form">
+            <h2>Sugira um Novo Lanche</h2>
+            <form action="/sugestao" method="GET">
+                <div class="form-group">
+                    <label for="nome">Nome do Lanche:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ingredientes">Ingredientes:</label>
+                    <textarea id="ingredientes" name="ingredientes" required></textarea>
+                </div>
+                
+                <button type="submit">Enviar Sugestão</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DevBurger - Todos os direitos reservados</p>
+    </footer>
 </body>
 </html>
